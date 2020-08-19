@@ -1,6 +1,6 @@
 /**
  * Script for welcome.ejs
  */
-document.getElementById('welcomeButton').addEventListener('click', e => {
-    switchView(VIEWS.welcome, VIEWS.login)
-})
+document.getElementById('welcomeButton').addEventListener('click', function (e) {
+    switchView(VIEWS.welcome, VIEWS.login);
+});
