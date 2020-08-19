@@ -1,10 +1,10 @@
-const AdmZip                = require('adm-zip')
-const child_process         = require('child_process')
-const crypto                = require('crypto')
-const fs                    = require('fs-extra')
-const os                    = require('os')
-const path                  = require('path')
-const { URL }               = require('url')
+import AdmZip from 'adm-zip'
+import child_process from 'child_process'
+import crypto from 'crypto'
+import fs from 'fs-extra'
+import os from 'os'
+import path from 'path'
+import { URL } from 'url'
 
 const { Util, Library }  = require('./assetguard')
 const ConfigManager            = require('./configmanager')
@@ -16,6 +16,18 @@ const logger = LoggerUtil('%c[ProcessBuilder]', 'color: #003996; font-weight: bo
 
 
 class ProcessBuilder {
+    gameDir: string
+    commonDir: any
+    server: any
+    versionData: any
+    forgeData: any
+    authUser: any
+    launcherVersion: any
+    fmlDir: string
+    llDir: string
+    libPath: string
+    usingLiteLoader: boolean
+    llPath: any
 
     constructor(distroServer, versionData, forgeData, authUser, launcherVersion){
         this.gameDir = path.join(ConfigManager.getInstanceDirectory(), distroServer.getID())
